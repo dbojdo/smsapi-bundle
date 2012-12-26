@@ -1,0 +1,7 @@
+parameters:
+#    webit_sms_api.example.class: Webit\Bundle\SmsApiBundle\Example
+
+services:
+#    webit_sms_api.example:
+#        class: %webit_sms_api.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
