@@ -7,7 +7,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 use Webit\Api\SmsCommon\Message\Sms;
-use Webit\Api\SmsCommon\Message\Reciver;
+use Webit\Api\SmsCommon\Message\Recipient;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 
@@ -16,7 +16,7 @@ class SendSmsCommand extends ContainerAwareCommand {
 		parent::configure();
 		$this->setName('webit:smsapi:send_sms')
 				->addArgument('message', InputArgument::REQUIRED)
-				->addArgument('recivers', InputArgument::REQUIRED)
+				->addArgument('recipients', InputArgument::REQUIRED)
 				->setDescription(
 						'Send SMS');
 	}
@@ -32,14 +32,14 @@ class SendSmsCommand extends ContainerAwareCommand {
 	protected function execute(InputInterface $input, OutputInterface $output) {
 		$sms = new Sms();
 		$sms->setContent($input->getArgument('message'));
-		$arRecivers = explode(',',$input->getArgument('recivers'));
-		if(count($arRecivers) == 0) {
-			$output->writeln('<error>You have to set at least one reciver</error>');
+		$arRecipients = explode(',',$input->getArgument('recipients'));
+		if(count($arRecipients) == 0) {
+			$output->writeln('<error>You have to set at least one recipient</error>');
 			return;
 		}
 		
-		foreach($arRecivers as $strReciver) {
-			$sms->addReciver(new Reciver($strReciver));
+		foreach($arRecipients as $strRecipient) {
+			$sms->addRecipient(new Recipient($strRecipient));
 		}
 		
 		$sender = $this->getContainer()->get('webit_sms_api.sms_sender');
