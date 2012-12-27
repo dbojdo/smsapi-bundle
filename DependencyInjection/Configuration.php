@@ -32,7 +32,7 @@ class Configuration implements ConfigurationInterface {
 						->scalarNode('nounicode')->defaultNull()->end()
 						->scalarNode('normalize')->defaultNull()->end()
 						->scalarNode('eco')->defaultValue(1)->end()
-						->scalarNode('fast')->defaultValue(1)->end()
+						->scalarNode('fast')->defaultNull()->end()
 						->scalarNode('partnerId')->defaultNull()->end()
 						->scalarNode('maxParts')->defaultNull()->end()
 				->end()
