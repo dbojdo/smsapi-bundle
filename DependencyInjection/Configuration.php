@@ -27,6 +27,7 @@ class Configuration implements ConfigurationInterface {
 					->children()
 						->scalarNode('from')->defaultNull()->end()
 						->scalarNode('test')->defaultValue(1)->end()
+						->scalarNode('eco')->defaultValue(1)->end()
 				->end()
 			->end()
 		->end();
