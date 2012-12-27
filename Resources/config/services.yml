@@ -1,7 +1,10 @@
 parameters:
-#    webit_sms_api.example.class: Webit\Bundle\SmsApiBundle\Example
+  webit_smsapi.sms_request_factory.class: Webit\Api\SmsApi\Request\SmsRequestFactory
+  webit_smsapi.sms_sender.class: Webit\Api\SmsApi\Sender\SmsHttpSender
 
 services:
-#    webit_sms_api.example:
-#        class: %webit_sms_api.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+  webit_smsapi.sms_request_factory:
+    class: %webit_smsapi.sms_request_factory.class%
+  webit_smsapi.sms_sender:
+    class: %webit_smsapi.sms_sender.class%
+    arguments: [@webit_smsapi.sms_request_factory]
