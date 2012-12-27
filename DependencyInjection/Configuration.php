@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface {
 						->scalarNode('method')->defaultValue('post')->end()
 						->scalarNode('encoding')->defaultNull()->end()
 						->scalarNode('from')->defaultNull()->end()
-						->scalarNode('details')->defaultValue(0)->end()
+						->scalarNode('details')->defaultNull()->end()
 						->scalarNode('nounicode')->defaultNull()->end()
 						->scalarNode('normalize')->defaultNull()->end()
 						->scalarNode('eco')->defaultValue(1)->end()
