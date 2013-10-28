@@ -19,8 +19,8 @@ class Configuration implements ConfigurationInterface {
 
 		$rootNode->
 			children()
-				->scalarNode('username')->cannotBeEmpty()->end()
-				->scalarNode('password')->cannotBeEmpty()->end()
+				->scalarNode('username')->cannotBeEmpty()->defaultValue(null)->end()
+				->scalarNode('password')->cannotBeEmpty()->defaultValue(null)->end()
 				->scalarNode('testmode')->defaultValue(1)->end()
 				->arrayNode('request_defaults')
 					->addDefaultsIfNotSet()

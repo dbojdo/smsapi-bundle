@@ -22,7 +22,6 @@ class WebitSmsApiExtension extends Extension {
 		$loader = new Loader\YamlFileLoader($container,
 				new FileLocator(__DIR__ . '/../Resources/config'));
 		$loader->load('services.yml');
-		
 		// factory config
 		$requestDefaults = $config['request_defaults'];
 		$requestDefaults['username'] = $config['username'];
