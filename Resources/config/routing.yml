@@ -1,3 +1,0 @@
-webit_sms_api_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: WebitSmsApiBundle:Default:index }

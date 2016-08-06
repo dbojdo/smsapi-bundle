@@ -7,4 +7,4 @@ services:
     class: %webit_smsapi.sms_request_factory.class%
   webit_smsapi.sms_sender:
     class: %webit_smsapi.sms_sender.class%
-    arguments: [@webit_smsapi.sms_request_factory]
+    arguments: ["@webit_smsapi.sms_request_factory"]
